@@ -1,0 +1,715 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div class="nav-1">
+          <i class="ri-menu-line"></i>
+          <h1>Home</h1>
+          <details>
+            <summary><h1>Genre</h1></summary>
+            <div class="dets">
+              <a href="{% url 'category' 'selfhelp' %}"><h2>Self Help</h2></a>
+              <h2 onclick="window.location='product preview1.html'">History</h2>
+              <h2>Philosophical</h2>
+              <h2>Fiction</h2>
+            </div>
+          </details>
+          <h1 onclick="window.location='about us.html'">About Us</h1>
+        </div>
+        <div class="logo">
+          <h1>Biblophile</h1>
+        </div>
+        <div class="nav-3">
+          <div class="search-filter-container">
+            <!-- <input type="text" id="searchInput" placeholder="Search for products..."  onclick="search()"> -->
+            <i
+              class="ri-search-line"
+              onclick="window.location = 'booksearch.html'"
+            ></i>
+          </div>
+          <i class="ri-book-line"></i>
+          <a href="{% url 'login_page' %}"><i class="ri-user-line"></i></a>
+          <a href="{% url 'user' %}">Profile</a>
+        </div>
+      </nav>
+      <div class="search">
+        <div class="container">
+          <h1 style="width: 20%">Here's Few Suggestions For you</h1>
+          <div id="products"></div>
+        </div>
+      </div>
+      <div class="page1">
+        <div class="elem">
+          <img
+            class="line"
+            src="https://th.bing.com/th/id/R.0186d1280a592d2d326496294089f1dc?rik=fLOmpESuYmkNxQ&riu=http%3a%2f%2fwww.freeiconspng.com%2fuploads%2fline-png-27.png&ehk=ZnE6HLYbA89aoj4C32pQgJ6KC%2fY%2btrbsqTBw3anBiJs%3d&risl=&pid=ImgRaw&r=0"
+            alt=""
+          />
+          <div class="circular-text" id="circularText"></div>
+          <img
+            class="heart"
+            src="https://www.downloadclipart.net/large/11072-red-heart-design.png"
+            alt=""
+          />
+        </div>
+        <div class="left">
+          <h1>
+            Books worth <br />
+            reading twice.
+          </h1>
+          <h4>
+            There are millions of books, how do you choose the right one? We
+            leave you with a list of + 100 books that can change your life.
+          </h4>
+          <button>Explore Books</button>
+        </div>
+        <div class="right">
+          <div id="container">
+            <div
+              data-scroll
+              data-scroll-speed="1"
+              data-scroll-direction="horizontal"
+              id="inner"
+            >
+              <img
+                src="https://img.freepik.com/premium-photo/woman-reading-book-fantasy-temple-3d-rendering_1015980-580760.jpg?ga=GA1.1.874350228.1720606149&semt=sph"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page2">
+        <div class="moving">
+          <div class="left-blur"></div>
+          <div class="move">
+            <h1>Selp Hellp</h1>
+            <h1>History</h1>
+            <h1>Philoshopical</h1>
+            <h1>Fiction</h1>
+            <h1>Selp Hellp</h1>
+            <h1>History</h1>
+            <h1>Philoshopical</h1>
+            <h1>Fiction</h1>
+          </div>
+          <div class="move">
+            <h1>Selp Hellp</h1>
+            <h1>History</h1>
+            <h1>Philoshopical</h1>
+            <h1>Fiction</h1>
+            <h1>Selp Hellp</h1>
+            <h1>History</h1>
+            <h1>Philoshopical</h1>
+            <h1>Fiction</h1>
+          </div>
+          <div class="right-blur"></div>
+        </div>
+        <div class="page2-info">
+          <div class="container">
+            <h2 class="title">Explore Our Best Collection</h2>
+            <div class="carousel-container">
+              <div class="carousel" id="carousel"></div>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <button class="arrow" id="prevBtn">&#8592;</button>
+            <button class="arrow" id="nextBtn">&#8594;</button>
+          </div>
+        </div>
+        <div class="sections"></div>
+      </div>
+      <div class="page3">
+        <div class="part-1">
+          <img
+            data-scroll
+            data-scroll-speed="1"
+            src="https://img.freepik.com/premium-photo/charming-anime-girl-with-sweet-smile-stylish-cap_1173476-1289.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+            alt=""
+          />
+          <p data-scroll data-scroll-speed="-.5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            dignissimos sit molestiae, temporibus voluptatum magnam. Incidunt
+            minus temporibus cupiditate aliquam at voluptatibus est, repudiandae
+            beatae natus inventore voluptatum facilis officia et quos blanditiis
+            delectus perspiciatis repellat explicabo ad quia? Praesentium?
+          </p>
+        </div>
+        <div class="part-2">
+          <p data-scroll data-scroll-speed=".5">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam qui
+            cupiditate molestias nisi fugit aut voluptatibus recusandae vero
+            fuga quas reprehenderit natus quaerat labore delectus ad, harum
+            doloribus numquam iusto magni, quisquam amet ipsum, possimus ipsam!
+            Laboriosam nam quasi officia?
+          </p>
+          <img
+            data-scroll
+            data-scroll-speed="-1"
+            src="https://img.freepik.com/premium-photo/most-beautiful-woman-history-kawaii-soft-smile-anime_777271-38546.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+            alt=""
+          />
+        </div>
+        <div class="part-3">
+          <img
+            data-scroll
+            data-scroll-speed="1"
+            src="https://img.freepik.com/free-photo/beautiful-anime-character-cartoon-scene_23-2151035192.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        data-scroll
+        data-scroll-speed=".5"
+        class="page4"
+        onclick="console.log('hello');"
+      >
+        <div class="cursor">
+          <p>Click Me</p>
+        </div>
+        <img
+          src="https://www.shutterstock.com/image-illustration/beautiful-landscape-background-blue-sky-600nw-2315001443.jpg"
+          alt=""
+        />
+        <h1>Sale Away</h1>
+        <div class="side-section">
+          <h2>shop upto 50% off</h2>
+        </div>
+      </div>
+      <div class="page5">
+        <div class="wrapper">
+          <header>
+            <h1>Our Customers Love Us!</h1>
+            <p class="subtitle">
+              See what people are saying about our products and services
+            </p>
+          </header>
+
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/photo-anime-girl-with-short-hair-wearing-white-dress-generative-ai_1286285-1323.jpg?ga=GA1.2.874350228.1720606149&semt=ais_hybrid"
+                  alt="Sarah J."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">Sarah J.</div>
+                  <div class="review-date">May 15, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★★</div>
+              <p class="review-content">
+                "Absolutely amazing! The product exceeded all my expectations.
+                The quality is top-notch, and the customer service was
+                incredibly helpful. I couldn't be happier with my purchase."
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/drawing-boy-with-blue-shirt-blue-shirt-with-cloudy-sky-background_1137054-1085.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                  alt="Michael R."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">Michael R.</div>
+                  <div class="review-date">May 10, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★★</div>
+              <p class="review-content">
+                "I've been using this product for a month now, and I can
+                confidently say it's the best in its category. The attention to
+                detail is remarkable, and it has significantly improved my daily
+                routine."
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/she-reminds-me-anime-character-i-created_1262542-14533.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                  alt="Emily L."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">Emily L.</div>
+                  <div class="review-date">May 5, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★☆</div>
+              <p class="review-content">
+                "Great value for money! While there's a small learning curve,
+                once you get the hang of it, it's incredibly useful. The
+                company's commitment to sustainability is also commendable."
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/wallpaper-anime-illustration_1137879-110625.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                  alt="David W."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">David W.</div>
+                  <div class="review-date">April 28, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★★</div>
+              <p class="review-content">
+                "I was skeptical at first, but this product has completely
+                changed my perspective. It's intuitive, efficient, and the
+                results are remarkable. Highly recommend to anyone considering
+                it!"
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/anime-girl-with-long-black-hair-blue-eyes-wearing-black-dress-generative-ai_1034986-79718.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                  alt="Sophia K."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">Sophia K.</div>
+                  <div class="review-date">April 22, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★★</div>
+              <p class="review-content">
+                "The customer support team deserves a special mention. They went
+                above and beyond to ensure I had the best experience with the
+                product. It's refreshing to see a company that truly cares about
+                its customers."
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <img
+                  src="https://img.freepik.com/premium-photo/wallpaper-anime-illustration_1137879-127035.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                  alt="Alex T."
+                  class="avatar"
+                />
+                <div class="review-info">
+                  <div class="reviewer-name">Alex T.</div>
+                  <div class="review-date">April 15, 2023</div>
+                </div>
+              </div>
+              <div class="rating">★★★★☆</div>
+              <p class="review-content">
+                "This product offers features that I haven't seen anywhere else.
+                While there's room for some minor improvements, overall, it's an
+                excellent choice and has become an essential part of my daily
+                life."
+              </p>
+              <div class="review-footer">Verified Purchase</div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-value">4.8</div>
+              <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">10,000+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">95%</div>
+              <div class="stat-label">Would Recommend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page7">
+        <div class="container">
+          <header>
+            <h1>Our Top Selling Products</h1>
+            <p class="subtitle">Discover what's trending among our customers</p>
+          </header>
+
+          <div class="slider-container">
+            <button class="slider-arrow left">&lt;</button>
+            <button class="slider-arrow right">&gt;</button>
+            <div class="product-slider">
+              <div class="product-card">
+                <div class="img-container">
+                  <img
+                    src="https://img.freepik.com/premium-photo/anime-girl-with-long-black-hair-earrings-looking-camera-generative-ai_1034989-64091.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                    alt="Premium Smartphone"
+                    class="product-image"
+                  />
+                </div>
+                <div class="product-info">
+                  <img
+                    src="https://img.freepik.com/premium-photo/anime-girl-with-long-black-hair-earrings-looking-camera-generative-ai_1034989-64091.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                    alt=""
+                    class="product-image"
+                  />
+
+                  <span class="product-rank">#1 Best Seller</span>
+                  <h2 class="product-name">product 1</h2>
+                  <p class="product-description">
+                    Experience cutting-edge technology with our flagship
+                    smartphone. Features a 6.7" OLED display, 5G capabilities,
+                    and an AI-powered camera system.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$999.99</span>
+                    <button>Add To Cart</button>
+                    <span class="product-sales">100,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img src="" alt="" class="product-image" />
+                <div class="product-info">
+                  <span class="product-rank">#2 Best Seller</span>
+                  <h2 class="product-name">product 2</h2>
+                  <p class="product-description">
+                    Immerse yourself in pure audio bliss with our premium
+                    wireless headphones. Enjoy 40 hours of playtime and
+                    industry-leading noise cancellation.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$299.99</span>
+                    <span class="product-sales">75,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img src="" alt="" class="product-image" />
+                <div class="product-info">
+                  <span class="product-rank">#3 Best Seller</span>
+                  <h2 class="product-name">product 3</h2>
+                  <p class="product-description">
+                    Elevate your fitness journey with our advanced smartwatch.
+                    Track your workouts, monitor your health, and stay connected
+                    on the go.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$199.99</span>
+                    <span class="product-sales">50,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img src="" alt="" class="product-image" />
+                <div class="product-info">
+                  <span class="product-rank">#4 Best Seller</span>
+                  <h2 class="product-name">product 4</h2>
+                  <p class="product-description">
+                    Boost your productivity with our sleek and powerful
+                    ultrabook. Featuring a 4K touch display, 12-hour battery
+                    life, and lightning-fast SSD storage.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$1,299.99</span>
+                    <span class="product-sales">30,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img src="" alt="" class="product-image" />
+                <div class="product-info">
+                  <span class="product-rank">#5 Best Seller</span>
+                  <h2 class="product-name">product 5</h2>
+                  <p class="product-description">
+                    Transform your home with our intelligent speaker system.
+                    Enjoy room-filling sound, voice control your smart home, and
+                    access AI assistance.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$149.99</span>
+                    <span class="product-sales">40,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card">
+                <img src="" alt="" class="product-image" />
+                <div class="product-info">
+                  <span class="product-rank">#6 Best Seller</span>
+                  <h2 class="product-name">product 6</h2>
+                  <p class="product-description">
+                    Capture life's moments in stunning detail with our
+                    professional-grade mirrorless camera. 8K video, 61MP sensor,
+                    and advanced autofocus system.
+                  </p>
+                  <div class="product-meta">
+                    <span class="product-price">$2,499.99</span>
+                    <span class="product-sales">20,000+ sold</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page6">
+        <div class="container">
+          <header>
+            <h1>Our Blogs</h1>
+            <p class="subtitle">
+              Discover insights, tips, and inspiration from our expert team
+            </p>
+          </header>
+
+          <div class="blog-grid">
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/anime-girl-straw-hat-holding-bunch-flowers-generative-ai_1034986-80444.jpg?ga=GA1.2.874350228.1720606149&semt=ais_hybrid"
+                alt="Tech Innovation"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Technology</div>
+                <h2 class="blog-title">The Future of AI in Everyday Life</h2>
+                <p class="blog-excerpt">
+                  Explore how artificial intelligence is reshaping our daily
+                  routines and what to expect in the coming years.
+                </p>
+                <div class="blog-meta">
+                  <span>May 15, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/anime-girl-with-long-black-hair-flower-her-hair-generative-ai_1034989-64104.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                alt="Business Strategy"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Business</div>
+                <h2 class="blog-title">5 Strategies for Sustainable Growth</h2>
+                <p class="blog-excerpt">
+                  Learn key strategies to ensure your business grows sustainably
+                  in an ever-changing market landscape.
+                </p>
+                <div class="blog-meta">
+                  <span>May 10, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/anime-girl-with-brown-eyes-brown-hair-with-earrings-generative-ai_1034470-76651.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                alt="Web Design Trends"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Design</div>
+                <h2 class="blog-title">Web Design Trends to Watch in 2023</h2>
+                <p class="blog-excerpt">
+                  Stay ahead of the curve with these cutting-edge web design
+                  trends that are shaping the digital landscape.
+                </p>
+                <div class="blog-meta">
+                  <span>May 5, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/photo-anime-girl-with-short-hair-wearing-white-dress-generative-ai_1286285-1214.jpg?ga=GA1.2.874350228.1720606149&semt=ais_hybrid"
+                alt="Productivity Tips"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Productivity</div>
+                <h2 class="blog-title">Mastering the Art of Time Management</h2>
+                <p class="blog-excerpt">
+                  Discover practical techniques to boost your productivity and
+                  make the most of your time.
+                </p>
+                <div class="blog-meta">
+                  <span>April 30, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/painting-woman-with-blue-eyes-blue-dress_452720-12200.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                alt="Workplace Wellness"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Wellness</div>
+                <h2 class="blog-title">
+                  Creating a Culture of Workplace Wellness
+                </h2>
+                <p class="blog-excerpt">
+                  Learn how to foster a healthy work environment that boosts
+                  employee satisfaction and productivity.
+                </p>
+                <div class="blog-meta">
+                  <span>April 25, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+
+            <article data-scroll data-scroll-speed=".1" class="blog-card">
+              <img
+                src="https://img.freepik.com/premium-photo/anime-girl-with-long-black-hair-blue-eyes-sitting-front-laptop-generative-ai_1034986-79100.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid"
+                alt="Digital Marketing"
+                class="blog-image"
+              />
+              <div class="blog-content">
+                <div class="blog-category">Marketing</div>
+                <h2 class="blog-title">
+                  The Power of Storytelling in Digital Marketing
+                </h2>
+                <p class="blog-excerpt">
+                  Uncover the secrets of effective storytelling and how it can
+                  transform your digital marketing efforts.
+                </p>
+                <div class="blog-meta">
+                  <span>April 20, 2023</span>
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <p>
+              Our Company is your gateway to exploring infinite digital
+              possibilities. We're committed to pushing the boundaries of what's
+              possible on the web.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: comany@gmail.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Digital Avenue, Cyberspace, WS 12345</p>
+          </div>
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="" class="social-icon">
+                <img
+                  src="https://img.freepik.com/premium-psd/3d-icon-social-media-app_23-2150049613.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+                  alt="Twitter"
+                />
+              </a>
+              <a href="" class="social-icon">
+                <img
+                  src="https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049579.jpg?ga=GA1.1.874350228.1720606149&semt=sph"
+                  alt="Facebook"
+                />
+              </a>
+              <a href="" class="social-icon">
+                <img
+                  src="https://img.freepik.com/free-psd/3d-icon-social-media-app_23-2150049581.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+                  alt="Instagram"
+                />
+              </a>
+              <a href="" class="social-icon">
+                <img
+                  src="https://img.freepik.com/premium-photo/social-media-linkedin-3d-icon-render-with-transparent-background-linkedin-3d-icon-illustration_740533-22.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user"
+                  alt="LinkedIn"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest innovations and features.</p>
+            <form
+              class="newsletter-form"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="942647e9-1e65-4a7c-8e8a-f461ef830c77"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                class="newsletter-input"
+              />
+              <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 company. All rights reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </footer>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/sheryjs/dist/Shery.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>

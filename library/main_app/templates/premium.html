@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Buy Premium</title><style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .premium-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      width: 350px;
+      transition: transform 0.3s ease;
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-header {
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    
+    .card-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .card-price {
+      font-size: 42px;
+      font-weight: bold;
+    }
+    
+    .card-duration {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+    
+    .card-features {
+      padding: 30px 20px;
+    }
+    
+    .feature-list {
+      list-style-type: none;
+    }
+    
+    .feature-item {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .feature-item::before {
+      content: '✓';
+      color: #2ecc71;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .card-cta {
+      padding: 0 20px 30px;
+      text-align: center;
+    }
+    
+    .btn-buy {
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      width: 100%;
+    }
+    
+    .btn-buy:hover {
+      opacity: 0.9;
+    }
+    
+    .guarantee {
+      text-align: center;
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 15px;
+    }
+  </style></head><body>
+    <div class="premium-card">
+      <div class="card-header">
+        <h2 class="card-title">Biblophile Premium</h2>
+        <div class="card-price">$9.99</div>
+        <div class="card-duration">per month</div>
+      </div>
+      <div class="card-features">
+        <ul class="feature-list">
+          <li class="feature-item">Unlimited access to all books</li>
+          <li class="feature-item">Ad-free reading experience</li>
+          <li class="feature-item">Offline downloads</li>
+          <li class="feature-item">Personalized recommendations</li>
+          <li class="feature-item">Exclusive author interviews</li>
+        </ul>
+      </div>
+      <div class="card-cta">
+        <button class="btn-buy">Start Your Premium Journey</button>
+        <p class="guarantee">30-day money-back guarantee</p>
+      </div>
+    </div>
+  
+    <script>
+      document.querySelector('.btn-buy').addEventListener('click', function() {
+        alert('Thank you for choosing Biblophile Premium! Redirecting to payment...');
+        // Here you would typically redirect to a payment gateway
+      });
+    </script>
+</body>
+</html>

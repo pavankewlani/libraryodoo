@@ -1,0 +1,738 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Products</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+    
+    *{
+       font-family: 'Nunito', sans-serif;
+       margin:0; padding:0;
+       box-sizing: border-box;
+       outline: none; border:none;
+       text-decoration: none;
+       transition: all .2s linear;
+       text-transform: capitalize;
+    }
+    
+    html{
+       font-size: 62.5%;
+       overflow-x: hidden;
+    }
+    
+    body{
+       background: #eee;
+    }
+    
+    
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    
+    .nav-1{
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        font-size: .8vw;
+        animation: showup .4s linear;
+    
+    }
+    
+    
+    .nav-1 h1:nth-child(1){
+      animation: showup .2s linear;
+    
+    }
+    
+    .nav-1 details summary{
+      animation: showup .6s linear;
+    
+    }
+    
+    
+    .nav-1 h1:nth-child(3){
+      animation: showup .8s linear;
+    
+    }
+    
+    
+    
+    details summary{
+        list-style: none;
+        position: relative;
+    }
+    details{
+        position: relative;
+    
+    }
+    
+    .dets{
+        border: solid black 1px;
+        position: absolute;
+        /* padding: 10px 20px; */
+        top: 120%;
+        border-radius: 20px;
+        background-color: #f1f1f1;
+        z-index: 9;
+    }
+    
+    .dets h2{
+        padding: 10px 20px;
+        border-radius: 20px;
+        transition: all ease .5s;
+    }
+    
+    .dets h2:hover{
+        background-color: #dedada;
+    }
+    
+    details summary::-webkit-details-marker {
+        display:none;
+      }
+    
+    .logo{
+        font-size: 1.9vw;
+        /* transform: translateX(-80%); */
+        animation: visible 1s linear;
+    
+    
+    }
+    
+    .nav-3{
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        font-size: 1.5vw;
+        animation: showup .8s linear;
+    
+    }
+    
+    
+    .header{
+       height: 50vh;
+       width: 100%;
+       background: url(https://img.freepik.com/free-photo/creative-composition-with-books-flower_23-2148851059.jpg?ga=GA1.1.874350228.1720606149&semt=ais_user);
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+       display: flex;
+       align-items: end;
+       justify-content: center;
+    }
+    
+    
+    .header h1{
+       background-color: rgba(255, 255, 255, 0.751);
+       padding: 50px;
+       font-size: 4vw;
+       outline: .1rem solid black;
+       outline-offset: -1.5rem;
+       border-radius: 20px 20px 0 0;
+    }
+    
+    .container{
+       max-width: 1200px;
+       margin:0 auto;
+       padding:3rem 2rem;
+    }
+    
+    .container .title{
+       font-size: 3.5rem;
+       color:#444;
+       margin-bottom: 3rem;
+       text-transform: uppercase;
+       text-align: center;
+    }
+    
+    .search-filter-container {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 2rem;
+     
+    }
+    
+    .search-container {
+       flex: 1;
+       margin-right: 2rem;
+    }
+    
+    .search-container input {
+       width: 50%;
+       padding: 1rem;
+       font-size: 1.6rem;
+       border: 0.1rem solid #ccc;
+       border-radius: 5rem;
+    }
+     
+    
+    .filter-container select {
+       padding: 1rem;
+       font-size: 1.6rem;
+       border: 0.1rem solid #ccc;
+       border-radius: 2rem;
+       cursor: pointer;
+    }
+    
+    .container .products-container{
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+       gap:2rem;
+    }
+    
+    .container .products-container .product{
+       text-align: center;
+       padding:3rem 2rem;
+       background: #fff;
+       box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+       outline: .1rem solid #ccc;
+       outline-offset: -1.5rem;
+       cursor: pointer;
+       border-radius: 20px;
+       margin: 10vh;
+    }
+    
+    .container .products-container .product:hover{
+       outline: .2rem solid #222;
+       outline-offset: 0;
+    }
+    
+    .container .products-container .product img{
+       height: 25rem;
+    }
+    
+    .container .products-container .product:hover img{
+       transform: scale(.9);
+    }
+    
+    .container .products-container .product h3{
+       padding:.5rem 0;
+       font-size: 1vw;
+       color:#444;
+    }
+    
+    .container .products-container .product:hover h3{
+       color:#27ae60;
+    }
+    
+    .container .products-container .product .price{
+       font-size: 2rem;
+       color:#444;
+    }
+    
+    .products-preview{
+       position: fixed;
+       top:0; left:0;
+       min-height: 100vh;
+       width: 100%;
+       background: rgba(0,0,0,.8);
+       display: none;
+       align-items: center;
+       justify-content: center;
+    }
+    
+    .products-preview .preview{
+       display: none;
+       padding:2rem;
+       text-align: center;
+       background: #fff;
+       position: relative;
+       margin:2rem;
+       width: 40rem;
+       border-radius: 20px;
+    }
+    
+    .products-preview .preview.active{
+       display: inline-block;
+    }
+    
+    .products-preview .preview img{
+       height: 30rem;
+    }
+    
+    .products-preview .preview .fa-times{
+       position: absolute;
+       top:1rem; right:1.5rem;
+       cursor: pointer;
+       color:#444;
+       font-size: 4rem;
+    }
+    
+    .products-preview .preview .fa-times:hover{
+       transform: rotate(90deg);
+    }
+    
+    .products-preview .preview h3{
+       color:#444;
+       padding:.5rem 0;
+       font-size: 2.5rem;
+    }
+    
+    .products-preview .preview .stars{
+       padding:1rem 0;
+       font-size: 1.7rem;
+    }
+    
+    .products-preview .preview .stars i{
+       color:#27ae60;
+    }
+    
+    .products-preview .preview .stars span{
+       color:#999;
+    }
+    
+    .products-preview .preview p{
+       line-height: 1.5;
+       padding:1rem 0;
+       font-size: 1.6rem;
+       color:#777;
+    }
+    
+    .products-preview .preview .price{
+       padding:1rem 0;
+       font-size: 2.5rem;
+       color:#27ae60;
+    }
+    
+    .products-preview .preview .buttons{
+       display: flex;
+       gap:1.5rem;
+       flex-wrap: wrap;
+       margin-top: 1rem;
+    }
+    
+    .products-preview .preview .buttons a{
+       flex:1 1 16rem;
+       padding:1rem;
+       font-size: 1.8rem;
+       color:#444;
+       border:.1rem solid #444;
+    }
+    
+    .products-preview .preview .buttons a.borrow{
+       background: #444;
+       color:#fff;
+    }
+    
+    .products-preview .preview .buttons a.borrow:hover{
+       background: #111;
+    }
+    
+    .products-preview .preview .buttons a.buy:hover{
+       background: #444;
+       color:#fff;
+    }
+    
+    @media (max-width:991px){
+       html{
+          font-size: 55%;
+       }
+    }
+    
+    @media (max-width:768px){
+       .products-preview .preview img{
+          height: 25rem;
+       }
+    }
+    
+    @media (max-width:450px){
+       html{
+          font-size: 50%;
+       }
+    }
+    
+    
+    .footer {
+        display: none;
+      height: 65vh;
+      width: 100%;
+      background: url(https://static.vecteezy.com/system/resources/previews/003/525/648/non_2x/simple-abstract-brown-aesthetic-pattern-background-free-vector.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #ecf0f1;
+      padding: 50px 0;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: rgba(226, 156, 106, 0.962);
+      padding: 80px;
+    }
+    
+    .footer-section {
+      flex: 1;
+      margin: 0 20px;
+      min-width: 200px;
+    }
+    
+    .footer-section h3 {
+      font-size: 2vw;
+      margin-bottom: 20px;
+      color: white;
+    }
+    
+    .footer-section p {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: 1vw;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      background-color: #34495e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .social-icon:hover {
+      background-color: #3498db;
+      scale: 1.2;
+    }
+    
+    .social-icon img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      margin-top: 20px;
+    }
+    
+    .newsletter-input {
+      flex-grow: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .newsletter-button {
+      padding: 10px 20px;
+      background-color: #f28e0c;
+      color: white;
+      border: solid white 5px;
+      border-radius: 0 10px 10px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .newsletter-button:hover {
+      background-color: #2980b9;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #34495e;
+      color: black;
+      font-size: 1vw;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+      }
+    
+      .footer-section {
+        margin-bottom: 30px;
+      }
+    }
+    
+
+    
+.submitBtn{
+    padding: 10px 20px;
+    background-color: transparent;
+    border: solid #fee192 2px;
+    border-radius: 5px;
+    font-size: 1vw;
+    font-weight: 900;
+    
+}
+
+.submitBtn:hover{
+    background-color: #fee192;
+    border: solid black 2px;
+}
+    </style>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-1">
+                <h1 onclick="window.location = 'index.html'">Home</h1>
+                <details>
+                    <summary><h1>Genre</h1></summary>
+                    <div class="dets">
+                    <h2 onclick="window.location='product preview.html'">Self Help</h2>
+                    <h2 onclick="window.location='product preview1.html'">History</h2>
+                    <h2>Philosophical</h2>
+                    <h2>Fiction</h2>
+                    
+                </div>
+                </details>
+                <h1 onclick="window.location='about us.html'">About Us</h1>
+
+            </div>
+            <div class="logo">
+                <h1>Biblophile</h1>
+            </div>
+            <div class="nav-3">
+
+                
+                <i class="ri-book-line"></i>
+                <i class="ri-user-line"></i>
+            </div>
+
+        </nav>
+       <div class="header">
+          <h1>Self Help</h1>
+       </div>
+    
+    <div class="container">
+    
+    
+    
+       <div class="search-filter-container">
+          <div class="search-container">
+             <input type="text" id="searchInput" placeholder="Search products...">
+          </div>
+          <div class="filter-container">
+             <select id="sortSelect">
+                <option value="default">default</option>
+                <option value="a-to-z">Name: A to Z</option>
+                <option value="z-to-a">Name: Z to A</option>
+             </select>
+          </div>
+       </div>
+    
+       <div class="products-container">
+        {% for product in product_details %}
+          <div class="product" data-name="p-1">
+             <img src="{{product.image.url}}" alt="strawberries" width="200" height="300" object-fit = "cover">
+             <h1>{{product.name}}</h1>
+             <h3>By-{{product.auth_name}}</h3>
+            <a href="{% url 'product' 'selfhelp' product.id %}"><button >Start</button></a>
+          </div>
+    {% endfor %}
+    </div>
+    
+    <div class="products-preview">
+    
+       <div class="preview" data-target="p-1">
+          <i class="fas fa-times"></i>
+          <img src="{{product.image.url}}" alt="book" width="200" height="300">
+          <h3>{{product.name}}</h3>
+        
+          <p>{{product.description}}</p>
+          <div class="buttons">
+            <!-- <div class="starting">
+                <h2>from: </h2>
+                <input type="datetime-local" name="from" id="from">
+             </div>
+             <div class="ending">
+                <h2>until: </h2>
+                <input type="datetime-local" name="until" id="until">
+             </div> -->
+               <div class="time">
+  <label for="issueTime" style="font-size: 1vw;">Issue Time:</label>
+  <select id="issueTimeHour">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+  </select> :
+  <select id="issueTimeMinute">
+    <option value="00">00</option>
+    <option value="15">15</option>
+    <option value="30">30</option>
+    <option value="45">45</option>
+  </select><br><br>
+  
+  <label for="expectedReturnTime" style="font-size: 1vw;">Expected Return Time:</label>
+  <select id="expectedReturnTimeHour">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+  </select> :
+  <select id="expectedReturnTimeMinute">
+    <option value="00">00</option>
+    <option value="15">15</option>
+    <option value="30">30</option>
+    <option value="45">45</option>
+  </select><br><br>
+</div>
+  <button class="submitBtn"  onclick="calculatePenalty()" >Save Time</button>
+  
+  <p id="penaltyResult"></p>             
+             <a href="#" class="borrow">borrow</a>
+             <button class="submitBtn">Download</button>
+           
+          </div>
+       </div>
+    
+    </div>
+   
+    <script>
+    let preveiwContainer = document.querySelector('.products-preview');
+    let previewBox = preveiwContainer.querySelectorAll('.preview');
+    
+    document.querySelectorAll('.products-container .product').forEach(product =>{
+      product.onclick = () =>{
+        preveiwContainer.style.display = 'flex';
+        let name = product.getAttribute('data-name');
+        previewBox.forEach(preview =>{
+          let target = preview.getAttribute('data-target');
+          if(name == target){
+            preview.classList.add('active');
+          }
+        });
+      };
+    });
+    
+    previewBox.forEach(close =>{
+      close.querySelector('.fa-times').onclick = () =>{
+        close.classList.remove('active');
+        preveiwContainer.style.display = 'none';
+      };
+    });
+    
+    
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product');
+    
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      products.forEach(product => {
+        const productName = product.querySelector('h3').textContent.toLowerCase();
+        if (productName.includes(searchTerm)) {
+          product.style.display = 'block';
+        } else {
+       
+          product.innerHTML = '<h1>This Book Is Not Available</h1>'
+        }
+      });
+    });
+    
+    const sortSelect = document.getElementById('sortSelect');
+    const productsContainer = document.querySelector('.products-container');
+    
+    sortSelect.addEventListener('change', function() {
+      const sortValue = this.value;
+      const productsArray = Array.from(products);
+    
+      productsArray.sort((a, b) => {
+        const aName = a.querySelector('h3').textContent.toLowerCase();
+        const bName = b.querySelector('h3').textContent.toLowerCase();
+       
+        switch(sortValue) {
+      
+          case 'a-to-z':
+            return aName.localeCompare(bName);
+          case 'z-to-a':
+            return bName.localeCompare(aName);
+          default:
+            return 0;
+        }
+      });
+    
+      productsArray.forEach(product => productsContainer.appendChild(product));
+    });
+
+    function calculatePenalty() {
+      var issueTimeHour = document.getElementById('issueTimeHour').value;
+      var issueTimeMinute = document.getElementById('issueTimeMinute').value;
+      var expectedReturnTimeHour = document.getElementById('expectedReturnTimeHour').value;
+      var expectedReturnTimeMinute = document.getElementById('expectedReturnTimeMinute').value;
+      console.log(issueTimeHour, issueTimeMinute, expectedReturnTimeHour, expectedReturnTimeMinute);
+      var issueTimeStr = issueTimeHour + ":" + issueTimeMinute + ":00";
+      var expectedReturnTimeStr = expectedReturnTimeHour + ":" + expectedReturnTimeMinute + ":00";
+
+      var issueTime = new Date("2000-01-01T" + issueTimeStr);
+      var expectedReturnTime = new Date("2000-01-01T" + expectedReturnTimeStr);
+
+      var now = new Date();
+
+      now.setFullYear(issueTime.getFullYear());
+      now.setMonth(issueTime.getMonth());
+      now.setDate(issueTime.getDate());
+
+    //   if (now > expectedReturnTime) {
+    //     var deltaMilliseconds = now - expectedReturnTime;
+    //     var totalMinutes = deltaMilliseconds / (1000 * 60); 
+    //     var perMinutePenaltyRate = 10;
+    //     var totalPenalty = totalMinutes * perMinutePenaltyRate;
+        
+    //     document.getElementById('penaltyResult').textContent = `Total penalty: ₹${totalPenalty.toFixed(2)}`;
+    //   } else {
+    //     document.getElementById('penaltyResult').textContent = "No penalty applied.";
+    //   }
+    }
+
+    </script>
+    </body></html>

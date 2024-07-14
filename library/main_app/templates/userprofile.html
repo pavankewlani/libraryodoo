@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <title>User Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .left-panel {
+    flex: 2;
+    padding: 20px;
+    border-right: 1px solid #444;
+  }
+  .right-panel {
+    flex: 1;
+    padding: 20px;
+  }
+  h1, h2 {
+    color: #4CAF50;
+  }
+  .book-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .book-item {
+    background-color: #3c3c3c;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 10px;
+    float: left;
+  }
+  .book-info {
+    overflow: hidden;
+  }
+  .book-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .book-author {
+    font-style: italic;
+    color: #aaa;
+  }
+  .profile-info {
+    background-color: #3c3c3c;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  .profile-name {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .profile-details {
+    font-size: 0.9em;
+  }
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #3c3c3c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+  }
+  .search-bar::placeholder {
+    color: #aaa;
+  }
+
+  .logout button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    border: none;
+    background-color: red;
+    margin-top: 2vh;
+    color: white;
+  }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-panel">
+      <h1>My Books</h1>
+      <input type="text" class="search-bar" placeholder="Search my books...">
+      <ul class="book-list">
+        <li class="book-item">
+          <img src="" alt="Odoo 14 Development Cookbook" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Odoo 14 Development Cookbook</div>
+            <div class="book-author">by Daniel Reis</div>
+            <p>Rapidly build, customize, and manage business applications with Odoo 14</p>
+          </div>
+        </li>
+        <li class="book-item">
+          <img src="" alt="Python Cookbook" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Python Cookbook</div>
+            <div class="book-author">by David Beazley & Brian K. Jones</div>
+            <p>Recipes for Mastering Python 3</p>
+          </div>
+        </li>
+        <li class="book-item">
+          <img src="" alt="Design Patterns" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Design Patterns</div>
+            <div class="book-author">by Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</div>
+            <p>Elements of Reusable Object-Oriented Software</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="right-panel">
+      <h2>User Profile</h2>
+      <div class="profile-info">
+        <img src="{% static 'download.png' %}" alt="{{data}}" class="profile-picture">
+        <div class="profile-name">{{data}}</div>
+        <div class="profile-details">
+          <p><strong>Email:{{data.email}}</strong></p>
+          <!-- <p><strong>Address:</strong> 215 Vine St, Scranton PA 18503, United States</p> -->
+          <p><strong>Member Since:</strong>{{data.date_joined}}</p>
+          <!-- <p><strong>Books Borrowed:</strong> 12</p>
+          <p><strong>Books Currently Out:</strong> 3</p> -->
+        </div>
+      </div>
+      <div class="logout">
+        <a href="{% url 'logout_page' %}"><button>
+          Log Out
+        </button>
+      </a>
+      </div>
+      <div class="penalty">
+        <h1>You Had Penalty of : <span>100</span></h1>
+      </div>
+    </div>
+  </div>
+<script>
+
+var penalty = document.querySelector('.penalty span')
+console.log(penalty);
+
+</script>
+</body>
+</html>
